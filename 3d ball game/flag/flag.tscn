@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://6majj4glgbqb"]
+
+[ext_resource type="PackedScene" uid="uid://buiown1n3wp3c" path="res://import/flag/flag.gltf" id="1_w3id2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5t4bu"]
+height = 14.5831
+radius = 1.24572
+
+[node name="Flag" type="Node3D"]
+
+[node name="flag" parent="." instance=ExtResource("1_w3id2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.0159, 0, 194.124)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="flag"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9198, 2.00243, -195.102)
+shape = SubResource("CylinderShape3D_5t4bu")

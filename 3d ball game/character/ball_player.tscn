@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://r22iorjbpwcy"]
+
+[ext_resource type="Script" path="res://scripts/ball_player.gd" id="1_ys7bq"]
+[ext_resource type="Texture2D" uid="uid://cyuktk4wei68j" path="res://textures/blue marble texture3.png" id="2_rhp4q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_klkdr"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6aygo"]
+albedo_color = Color(0.54902, 0.568627, 0.552941, 1)
+albedo_texture = ExtResource("2_rhp4q")
+clearcoat_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_vftg0"]
+material = SubResource("StandardMaterial3D_6aygo")
+radius = 1.0
+height = 2.0
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_ys7bq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_klkdr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_vftg0")

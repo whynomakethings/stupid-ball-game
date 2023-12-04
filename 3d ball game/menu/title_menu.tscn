@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://hfeb268hysqu"]
+
+[ext_resource type="FontFile" uid="uid://bd5h88tgn8y67" path="res://VinaSans-Regular.ttf" id="1_85d5k"]
+[ext_resource type="Script" path="res://scripts/play button.gd" id="2_mwbyv"]
+
+[node name="title menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+color = Color(0, 0.588235, 0.94902, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 132.0
+offset_right = 1548.0
+offset_bottom = 664.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.898039, 0.752941, 0.521569, 1)
+theme_override_colors/font_shadow_color = Color(0.168627, 0.168627, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(0.745098, 0.745098, 0.745098, 1)
+theme_override_fonts/font = ExtResource("1_85d5k")
+theme_override_font_sizes/font_size = 200
+text = "crappy ball game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 682.0
+offset_right = 1136.0
+offset_bottom = 827.0
+theme_override_colors/font_color = Color(0.764706, 0.203922, 0.678431, 1)
+theme_override_colors/font_pressed_color = Color(0.901961, 0.901961, 0.901961, 0.101961)
+theme_override_colors/font_hover_color = Color(0, 0.584314, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "play"
+flat = true
+icon_alignment = 1
+script = ExtResource("2_mwbyv")
+
+[connection signal="pressed" from="play button" to="play button" method="_on_pressed"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://qk0dly6bmjl3"]
+
+[ext_resource type="FontFile" uid="uid://bd5h88tgn8y67" path="res://VinaSans-Regular.ttf" id="1_qyvg5"]
+[ext_resource type="Script" path="res://scripts/replay.gd" id="2_rxom1"]
+[ext_resource type="Script" path="res://scripts/give up.gd" id="3_i2xjc"]
+
+[sub_resource type="Theme" id="Theme_8ctci"]
+
+[sub_resource type="FontVariation" id="FontVariation_yh5sf"]
+base_font = ExtResource("1_qyvg5")
+
+[sub_resource type="Theme" id="Theme_vloa3"]
+
+[sub_resource type="Theme" id="Theme_dk5kv"]
+
+[node name="game over screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 3803.0
+offset_bottom = 2055.0
+color = Color(0.796078, 0.101961, 0.2, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 112.0
+offset_right = 1701.0
+offset_bottom = 610.0
+theme = SubResource("Theme_8ctci")
+theme_override_colors/font_color = Color(0.921569, 0.368627, 0.156863, 1)
+theme_override_fonts/font = SubResource("FontVariation_yh5sf")
+theme_override_font_sizes/font_size = 400
+text = "Game over "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="replay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 734.0
+offset_right = 741.0
+offset_bottom = 873.0
+theme = SubResource("Theme_vloa3")
+theme_override_colors/font_color = Color(0.337255, 0.964706, 0.984314, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.960784, 0.941176, 0.960784, 1)
+theme_override_font_sizes/font_size = 80
+text = "replay this crap"
+flat = true
+script = ExtResource("2_rxom1")
+
+[node name="give up" type="Button" parent="."]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 726.0
+offset_right = 1892.0
+offset_bottom = 871.0
+theme = SubResource("Theme_dk5kv")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.952941, 0.952941, 1)
+theme_override_font_sizes/font_size = 80
+text = "go outside, touch grass"
+flat = true
+script = ExtResource("3_i2xjc")
+
+[connection signal="pressed" from="replay" to="replay" method="_on_pressed"]
+[connection signal="pressed" from="give up" to="give up" method="_on_pressed"]

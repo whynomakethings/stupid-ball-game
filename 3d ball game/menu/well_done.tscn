@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://3cqu3qxrkink"]
+
+[ext_resource type="FontFile" uid="uid://bd5h88tgn8y67" path="res://VinaSans-Regular.ttf" id="1_4nkh5"]
+[ext_resource type="Script" path="res://scripts/give up.gd" id="2_drsbd"]
+[ext_resource type="Script" path="res://scripts/replay.gd" id="3_n2ly3"]
+
+[sub_resource type="Theme" id="Theme_uljs0"]
+
+[sub_resource type="Theme" id="Theme_b6b1i"]
+
+[sub_resource type="Theme" id="Theme_6mg4n"]
+
+[node name="well_done" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1939.0
+offset_bottom = 1096.0
+color = Color(0.341176, 1, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.011
+offset_left = 122.0
+offset_top = 134.0
+offset_right = 1835.0
+offset_bottom = 534.12
+theme = SubResource("Theme_uljs0")
+theme_override_colors/font_color = Color(0.87451, 0.552941, 0.145098, 1)
+theme_override_fonts/font = ExtResource("1_4nkh5")
+theme_override_font_sizes/font_size = 300
+text = "WELL DONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="give up" type="Button" parent="."]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 620.0
+offset_right = 1417.0
+offset_bottom = 765.0
+theme = SubResource("Theme_b6b1i")
+theme_override_colors/font_color = Color(0.890196, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.952941, 0.952941, 1)
+theme_override_font_sizes/font_size = 80
+text = "Leave"
+flat = true
+script = ExtResource("2_drsbd")
+
+[node name="replay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 674.0
+offset_top = 783.0
+offset_right = 1280.0
+offset_bottom = 922.0
+theme = SubResource("Theme_6mg4n")
+theme_override_colors/font_color = Color(0.945098, 0, 0.647059, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.960784, 0.941176, 0.960784, 1)
+theme_override_font_sizes/font_size = 80
+text = "replay this crap"
+flat = true
+script = ExtResource("3_n2ly3")
+
+[connection signal="pressed" from="give up" to="give up" method="_on_pressed"]
+[connection signal="pressed" from="replay" to="replay" method="_on_pressed"]

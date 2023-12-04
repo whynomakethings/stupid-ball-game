@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca5veh61a6xod"]
+
+[ext_resource type="PackedScene" uid="uid://br1dqxpwaqieq" path="res://import/smasher/smasher.gltf" id="1_2u3w8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_25xxf"]
+height = 4.5
+radius = 2.2
+
+[node name="smasher" instance=ExtResource("1_2u3w8")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 1)
+mass = 10.0
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(-1.27506, -9.36827e-08, -3.37886e-09, -3.79998e-08, 0.0229748, -1.27485, 5.57347e-08, -1.27485, -0.0229748, -0.139889, 0.371513, -1.00997)
+shape = SubResource("CylinderShape3D_25xxf")
+
+[node name="smasher " parent="." index="1"]
+transform = Transform3D(0, 1.27485, 0.0229748, -3.79998e-08, 0.0229748, -1.27485, -1.27506, -3.79998e-08, 0, -1.13989, 20.8715, 0.390027)
